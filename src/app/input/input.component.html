@@ -1,5 +1,6 @@
 <input
   class="todo-input"
+  [value]="title"
   (keyup.enter)="changeTitle(inputValue)"
   #inputValue>
-<button (click)="changeTitle(inputValue)">Save</button>
+<button class="btn" (click)="changeTitle(inputValue)">Save</button>

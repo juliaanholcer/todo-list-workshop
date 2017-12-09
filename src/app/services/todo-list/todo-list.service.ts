@@ -17,4 +17,7 @@ export class TodoListService {
   removeItem(item: TodoListItem): TodoListItem[] {
     return this.storage.destroy(item);
   }
+  updateItem(item: TodoListItem, changes): TodoListItem[] {
+    return this.storage.put(item, changes);
+  }
 }

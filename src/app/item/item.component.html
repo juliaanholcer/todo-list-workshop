@@ -1,6 +1,9 @@
-<div class="todo-item">
+<div *ngIf="!inputVisible" class="todo-item">
   <input class="todo-checkbox" type="checkbox" (click)="completeItem()">
-  <p class="todo-title" [ngClass]="{'todo-complete' : isComplete}">
+  <p class="todo-title" [ngClass]="{'todo-complete' : isComplete}" (click)="showInput()">
     {{ todoItem.title }}</p>
   <button class="btn btn-red" (click)="removeItem()">x</button>
+</div>
+<div *ngIf="inputVisible" class="todo-item">
+  <todo-input [title]="todoItem.title" (submit)="updateItem($event)"></todo-input>
 </div>

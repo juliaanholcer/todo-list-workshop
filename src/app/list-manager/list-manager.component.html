@@ -4,6 +4,9 @@
   </h1>
   <todo-input class="todo-add" (submit)="addItem($event)"></todo-input>
   <div *ngFor="let item of todoList">
-    <todo-item [todoItem]="item" (remove)="removeItem($event)"></todo-item>
+    <todo-item
+      [todoItem]="item"
+      (remove)="removeItem($event)"
+      (update)="updateItem($event)"></todo-item>
   </div>
 </div>
